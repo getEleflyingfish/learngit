@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>index</title>
+<!--防止IE进入怪异模式-->
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/rest.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/layout.css"/>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</head>
+
+<body>
+
+
+    <div id="app">
+         <p> {{ms}} </p>
+    </div>
+
+<script>
+     var meste = 'holle';
+       var vm = new vue({
+            el:'#app',
+            data:{
+                ms:meste
+            }
+        })
+</script>
+
+</body>
+</html>

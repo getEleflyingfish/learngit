@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>index</title>
+<!--防止IE进入怪异模式-->
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/rest.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/layout.css"/> 
+<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</head>
+
+<body>
+
+<style>
+  .asdasdasd {
+      height: 190px;
+      width: 100%;
+      text-align: center;
+  }
+  .asdasdasd .asdasdasd {
+     display: inline-block;
+  }
+</style>
+
+
+
+
+<div class="swiper-container asdasdasd">
+
+    <ul class="swiper-wrapper  asdasd">
+
+        <li class="swiper-slide"><img src="images/inclir_09.jpg" alt="Slide 1"></li>
+        <li class="swiper-slide"><img src="images/inclir_11.jpg" alt="Slide 2"></li>
+        <li class="swiper-slide"><img src="images/inclir_13.jpg" alt="Slide 3"></li>
+    </ul>  
+
+     <!-- 如果需要分页器 -->
+     <div class="swiper-pagination"></div>
+    
+     <!-- 如果需要导航按钮 -->
+     <div class="swiper-button-prev"></div>
+     <div class="swiper-button-next"></div>
+     
+     <!-- 如果需要滚动条 -->
+     <div class="swiper-scrollbar"></div>
+</div>
+<script>
+	
+    var mySwiper = new Swiper ('.swiper-container', {
+    direction: 'horizontal', // 垂直切换选项
+    loop: true, // 循环模式选项
+    
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })      
+
+
+</script>
+
+</body>
+</html>

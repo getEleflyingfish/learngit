@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- @ 用于绑定事件 -->
+        <input type="button" value="跑起来" @click="start">
+        <input type="button" value="停下来" @click="stop">
+        <!-- 插值表达式，展示data属性数据 -->
+        <h3>{{ msg }}</h3>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        // 规定操作的前端元素，id值为app的元素
+        el: '#app',
+        data:{
+            msg: '恕我直言，在座的各位都是垃圾...',
+            // 
+            myInterval: null
+        },
+        methods:{
+            start:function(){
+                console.log('跑起来')
+                if(this.myInterval){
+                    return
+                }
+                // => 的作用，我还朦朦胧胧的，大概意思就是使下面的this能够访问上面的data中的数据
+                this.myInterval = setInterval(() => {
+                    // 绑定字符串中的第一个元素
+                    let start = this.msg.substring(0, 1)
+                    // 绑定字符串中除第一个元素外的其他元素
+                    let end = this.msg.substring(1)
+                    // 进行新的字符串拼接并赋值
+                    this.msg = end + start
+                }, 200)
+            },
+            stop(){
+                console.log('停下来')
+                // clearInterval 用来终止动作
+                clearInterval(this.myInterval)
+                this.myInterval = null
+            }
+        }
+    })
+</script>
+</html>

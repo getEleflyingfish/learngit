@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Document</title>
+    <!--防止IE进入怪异模式-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/rest.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+</head>
+
+<body>
+
+    <div id="box"></div>
+    <!-- <script src="https://cdn.bootcss.com/countup.js/1.9.3/countUp.js"></script> -->
+    <script>
+        var options = {
+            useEasing: true,
+            useGrouping: true,
+            separator: ',',
+            decimal: '.',
+        };
+        var demo = new CountUp('box', 0, 4068, 0, 2.5, options);
+        if (!demo.error) {
+            demo.start();
+        } else {
+            console.error(demo.error);
+        }
+    </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>

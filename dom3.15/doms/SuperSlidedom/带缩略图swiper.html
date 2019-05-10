@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Document</title>
+    <!--防止IE进入怪异模式-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/rest.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+
+    <!--  <script src="js/jquery1.42.min.js"></script> -->
+    <script src="swiper.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            background: initial;
+
+        }
+
+    </style>
+
+
+
+
+
+    <div class="swiper-container" id="gallery">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide blue-slide">
+                slider1</div>
+            <div class="swiper-slide red-slide">
+                slider2</div>
+            <div class="swiper-slide orange-slide">
+                slider3</div>
+            <div class="swiper-slide blue-slide">
+                slider4</div>
+            <div class="swiper-slide red-slide">
+                slider5</div>
+            <div class="swiper-slide orange-slide">
+                slider6</div>
+        </div>
+    </div>
+    <div class="swiper-container" id="thumbs">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide blue-slide">
+                slider1</div>
+            <div class="swiper-slide red-slide">
+                slider2</div>
+            <div class="swiper-slide orange-slide">
+                slider3</div>
+            <div class="swiper-slide blue-slide">
+                slider4</div>
+            <div class="swiper-slide red-slide">
+                slider5</div>
+            <div class="swiper-slide orange-slide">
+                slider6</div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+       #gallery .swiper-slide { 
+           line-height: 300px;
+       }
+        #thumbs {
+            margin-top: 10px;
+        }
+
+        #thumbs .swiper-slide {
+            line-height: 90px !important;
+            opacity: 0.4;
+            background: #cccccc;
+            text-align: center;
+        }
+
+        #thumbs .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+    </style>
+
+    <script language="javascript">
+  /*       var thumbsSwiper = new Swiper('#thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 4,
+            watchSlidesVisibility: true,
+             loop: true, 
+        })
+        var gallerySwiper = new Swiper('#gallery', {
+            spaceBetween: 10,
+             loop: true, 
+            thumbs: {
+                swiper: thumbsSwiper,
+            }
+        }) */ 
+
+        var thumbsSwiper = new Swiper('#thumbs',{
+            spaceBetween: 10,
+            slidesPerView: 4,
+            watchSlidesVisibility: true,//防止不可点击
+          /*   loop: true,  */
+            })
+            var gallerySwiper = new Swiper('#gallery',{
+            spaceBetween: 10,
+          /*   loop: true,  */
+            thumbs: {
+                swiper: thumbsSwiper,
+            }
+            })
+
+    </script>
+
+</body>
+
+</html>

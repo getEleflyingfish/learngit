@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Document</title>
+    <!--防止IE进入怪异模式-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/rest.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+</head>
+
+<body>
+  
+    <div class="leme" style="height:50px;width:50px;background:red;">
+         <ul id="box" style="  ">
+             <li>
+                 <h5>第一个个类别</h5> 
+                 <ul class="yyy" style="display:none;">
+                     <li>子级</li> 
+                     <li>子级</li>
+                 </ul>
+             </li> 
+
+             <li>
+                <h5>第二个个类别</h5> 
+                <ul class="yyy" style="display:none;">
+                    <li>子级</li> 
+                    <li>子级</li>
+                </ul>
+            </li>
+         </ul>
+
+
+    </div>
+    <!-- <script src="https://cdn.bootcss.com/countup.js/1.9.3/countUp.js"></script> -->
+    <script>
+              function iskufenz (topmost,pullDown,headlineBtn,siblingElement){ 
+             var small = document.getElementById(topmost); //父级
+            var btnSti = document.querySelector(pullDown); //下拉
+            var titbtn = small.getElementsByTagName(headlineBtn); //titele标题
+            var emUl = small.querySelectorAll(siblingElement); //同级标题下ul
+            small.style.display = "none";
+            document.body.onclick = function () {
+                small.style.display = "none";
+            }
+            btnSti.addEventListener("click",function(event){ 
+                event.stopPropagation();
+                event.cancelBubble = true;
+                small.style.display = "block"; 
+            },false)
+            
+            for(var i=0;i<titbtn.length;i++){
+                titbtn[i].index = i;
+                titbtn[i].onclick = function (){
+                        
+                    for(var i=0;i<titbtn.length;i++){
+                        if(i!=this.index){
+                        emUl[i].style.display = "none";
+                        titbtn[i].className="";
+                    }
+                    }
+                
+                    if(this.className==""){
+                        emUl[this.index].style.display = "block";
+                        this.className="active"; 
+                    }else{
+                        emUl[this.index].style.display = "none";
+                        this.className="";
+                    }
+
+                }
+            } 
+
+        } 
+        iskufenz("box",".leme","h5",".yyy");
+
+    </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
