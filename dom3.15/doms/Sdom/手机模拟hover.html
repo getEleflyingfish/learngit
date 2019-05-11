@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+*{ margin:0; padding:0; }
+.domain a{ display:inline-block; border:1px solid #ccc; padding:5px 10px; margin:10px; }
+.domain a:active{ background-color:#c00; color:#fff; }
+</style>
+</head>
+<body>
+<div class="domain" id="js-domain">
+<a href="#">点击1</a>
+<a href="#">点击2</a>
+</div>
+
+<script>
+window.onload = function(){
+var doma=document.getElementById("js-domain").getElementsByTagName('a');
+for(var i=0;i<doma.length;i++){
+doma[i].addEventListener('touchstart',function(){},false);
+};	
+}
+</script>
+
+</body>
+</html>

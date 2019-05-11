@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>ajax</title>
+    <!--防止IE进入怪异模式-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/rest.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+</head>
+
+    <body >
+
+            
+        <div  id="2dte"> <h5>  修改内容</h5></div>
+         <button id="ager" class=""> 修改内容按钮 </button>
+
+        
+
+
+
+        <script>
+
+//1. 绝对路径url开头为一个斜杠"/"，这个斜杠说明这个请求从根目录去访问,这个是绝对路径。
+//2. 相对路径相对路径就是相对于html页面路径的路径，记住，不是相对于请求的JS文件的路径。
+
+       
+var xmlhttp;
+     ager.onclick = function (){ 
+    
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	
+
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("2dte").innerHTML=xmlhttp.responseText;
+          
+		}
+	}
+	xmlhttp.open("GET","jons/jons.txt",true);
+	xmlhttp.send();
+     }
+
+          
+        </script>
+
+    </body>
+
+</html>

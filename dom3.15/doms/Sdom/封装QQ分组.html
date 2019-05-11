@@ -37,6 +37,7 @@
     </div>
     <!-- <script src="https://cdn.bootcss.com/countup.js/1.9.3/countUp.js"></script> -->
     <script>
+            // iskufenz("box",".leme","h5",".yyy");
               function iskufenz (topmost,pullDown,headlineBtn,siblingElement){ 
              var small = document.getElementById(topmost); //父级
             var btnSti = document.querySelector(pullDown); //下拉
@@ -51,6 +52,7 @@
                 event.cancelBubble = true;
                 small.style.display = "block"; 
             },false)
+   
             
             for(var i=0;i<titbtn.length;i++){
                 titbtn[i].index = i;

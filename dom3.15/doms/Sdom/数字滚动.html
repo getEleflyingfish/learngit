@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Document</title>
+    <!--防止IE进入怪异模式-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/rest.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <script src="js/jquery1.42.min.js"></script>
+</head>
+
+<body>
+    <style>
+          body { 
+              background: initial;
+          } 
+          @font-face {
+            font-family: 'fz';   /*字体名称*/
+            src: url('fonts/MontserratAlternates-Bold.pfb.ttf');       /*字体源文件*/
+        }
+    </style>
+
+    <!--  -->
+    <h1>  第一种滚动 ---numrolling.js ///原生js</h1>
+    <div id="box"></div>
+    <script src="js/numrolling.js"></script>
+    <script>
+        var options = {
+            useEasing: true,
+            useGrouping: true,
+            separator: ',',
+            decimal: '.',
+        };
+        var demo = new CountUp('box', 0, 4068, 0, 2.5, options);
+        if (!demo.error) {
+            demo.start();
+        } else {
+            console.error(demo.error);
+        }
+    </script>
+ 
+    <!--  -->
+    <h1 style=" font-family:'fz';">第二种滚动 ---countUp.min.js ///依赖jq</h1>
+    <div id="box2">  </div>
+    <div id="box2i">  </div>
+    <div id="box2l">  </div> 
+    <div id="box2o">  </div> 
+   <!--  <script src="js/countUp.min.js"></script> -->
+    <script>
+    	var options = {  
+				  useEasing: true, 	 	// 使用缓和
+				  useGrouping: true,	// 使用分组(是否显示千位分隔符,一般为 true)
+				  separator: ',',		// 分隔器(千位分隔符,默认为',')
+				  decimal: '.',			// 十进制(小数点符号,默认为 '.')
+				  prefix: '',			// 字首(数字的前缀,根据需要可设为 $,¥,￥ 等)
+				  suffix: ''			// 后缀(数字的后缀 ,根据需要可设为 元,个,美元 等) 
+			};
+			$(function() {
+				// CountUp(参数一, 参数二, 参数三, 参数四, 参数五, 参数六)
+				// 参数一: 数字所在容器
+				// 参数二: 数字开始增长前的默认值(起始值),一般从 0 开始增长
+				// 参数三: 数字增长后的最终值,该值一般通过异步请求获取
+				// 参数四: 数字小数点后保留的位数
+				// 参数五: 数字增长特效的时间,此处为3秒
+				// 参数六: 其他配置项
+				// 注: 参数六也可不加,其配置项则为默认值
+				
+				new CountUp("box2", 0, 2012, 0, 3, options).start();
+				new CountUp("box2i", 0, 300, 0, 3, options).start();
+				new CountUp("box2l", 0, 40, 0, 3, options).start();
+				new CountUp("box2o", 0, 5, 0, 3, options).start();
+			});
+
+    </script>
+
+        <!--  -->
+        <h1>  第三种滚动 ---count.js ///依赖jq</h1>
+        <div id="box3"></div>
+      <!--   <script src="js/count.js"></script> -->
+        <script>
+       
+           /*      $(function(){
+                    $("#box3").numberRock({
+                        lastNumber:2012,
+                        duration:5000,
+                        easing:'swing',  //慢快慢
+                    });
+                }); */
+        </script>
+
+
+</body>
+
+</html>

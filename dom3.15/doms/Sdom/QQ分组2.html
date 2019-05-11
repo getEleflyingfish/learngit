@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Document</title>
+    <!--防止IE进入怪异模式-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/rest.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+</head>
+
+<body>
+  
+ 
+    <style>
+        ul,li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            display: none;
+        }
+        h3{
+            margin: 0;
+            background: cornflowerblue;
+        }
+        div{
+            text-indent: 20px;
+            width: 200px;
+        }
+        .active{
+            background: coral;
+        }
+    </style>
+<div>
+    <h3>分组1</h3>
+    <ul>
+        <li>分组11</li>
+        <li>分组12</li>
+        <li>分组13</li>
+    </ul>
+</div>	
+<div>
+    <h3>分组2</h3>
+    <ul>
+        <li>分组21</li>
+        <li>分组22</li>
+        <li>分组23</li>
+        <li>分组24</li>
+    </ul>
+</div>	
+<div>
+    <h3>分组3</h3>
+    <ul>
+        <li>分组31</li>
+        <li>分组32</li>
+        <li>分组33</li>
+        <li>分组34</li>
+        <li>分组35</li>
+    </ul>
+</div>	
+
+
+
+
+
+
+
+
+
+    <script>
+            var h3s = document.getElementsByTagName("h3");
+			var uls = document.getElementsByTagName("ul");
+			var lis = document.getElementsByTagName("li");
+			for (var i = 0; i < lis.length; i++) {
+				lis[i].onmouseover = function(){
+					for(i = 0; i < lis.length; i++) {
+						lis[i].style.background = "";
+					}
+					this.style.background = "yellow";
+				}
+				lis[i].onmouseout = function(){
+					for(i = 0; i < lis.length; i++) {
+						lis[i].style.background = "";
+					}
+				}
+			}
+			for(var i = 0;i<h3s.length;i++){
+				h3s[i].onoff = true;
+				h3s[i].index = i;
+				h3s[i].onclick = function(){
+					for (var i = 0; i < h3s.length; i++) {
+//						除了点击的h3以外的所有h3
+						if(i != this.index){
+							h3s[i].className = "";
+							h3s[i].onoff = true;
+							uls[i].style.display = "none";
+						}
+					}
+					if(this.onoff){
+						this.className = "active";
+						uls[this.index].style.display = "block"; 
+					}else{
+						this.className = "";
+						uls[this.index].style.display = "none";
+					}
+					this.onoff = !this.onoff;
+				}
+			}
+
+    </script>
+</body>
+
+</html>

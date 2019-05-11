@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>index</title>
+<!--防止IE进入怪异模式-->
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/rest.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/layout.css"/>
+<script type="text/javascript" src="js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+</head>
+
+<body>
+
+<style>
+
+       .bd li {
+          
+           height: 569px;
+           width: 100%;
+           background-size: cover;
+       }
+       .bd .lo1 {
+        background: url(images/hederabg_10.png)no-repeat top center;
+       }
+       .bd .lo2 {
+           
+       }
+       .bd .lo3 {
+      
+       }
+        .bd li img{
+            display: block;
+            width: 100%;
+        }
+
+        .hd li {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .hd li.on {
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, .5);
+            border: 1px solid red;
+            border-radius: 50%;
+        }
+        img {
+            max-width: 100%;
+        }
+</style>
+<div class="superSlide-dahua">
+     <ul class="bd">
+         <li class="lo1"> <a href=""></a></li> 
+         <li class="lo2"> <a href=""></a></li>
+         <li class="lo3"> <a href=""> </a></li> 
+     </ul> 
+     <ul class="hd">
+        <li ></li> 
+        <li class="on"></li>
+        <li></li>
+    </ul>
+ 
+<div class="a" style="width:200px;height:50px;border: 1px solid red; word-wrap:break-word;">
+    <a href="">汉字汉字汉字</a> 
+    <a href="">汉字汉字汉字</a>
+    <a href="">汉字汉字汉字</a>
+    <a href="">汉字汉字汉字</a>
+</div>
+<style>
+.a a {
+    width: auto;
+    height: auto;
+    display: block;
+    display: inline-block;
+ }
+
+</style>
+</div>
+
+<script>
+		jQuery(".superSlide-dahua").slide({ 
+            titCell:".hd ", 
+            mainCell:".bd ",
+            effect:"fold", 
+            autoPlay:true, 
+            autoPage:true,
+            trigger:"click"
+        });	
+
+
+
+</script>
+
+</body>
+</html>
