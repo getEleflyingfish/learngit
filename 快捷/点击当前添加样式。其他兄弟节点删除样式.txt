@@ -1,0 +1,17 @@
+    var liAry=trntr.getElementsByTagName('a');  
+            console.log(liAry);
+			function changeStyle(){
+				for(var i=0,liLen=liAry.length;i<liLen;i++)
+				{
+				if(liAry[i].id==this.id)
+				{
+				liAry[i].className="a2"
+				}else{
+					 liAry[i].className="" }
+				}
+			}
+				
+				for(var i=0,liLen=liAry.length;i<liLen;i++){
+				
+					liAry[i].onclick=changeStyle;
+				}

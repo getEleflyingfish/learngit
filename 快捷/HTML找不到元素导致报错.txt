@@ -1,0 +1,29 @@
+var list_text = document.getElementByClassName('fa-caret-right');
+if(list_text.length === 0){
+  return false;  //如果匹配到0个元素，则将函数返回，不继续执行
+}
+
+
+
+-------------------------------------------------------------------
+
+0x01 方案一
+通过document.URL判断页面的链接进行区分判断
+
+eg：
+
+首页的链接 https://xxx.com/index/
+子页面链接 https://xxx.com/index/child/
+判断链接后的参数即可实现你想要的效果。
+
+0x02 方案二
+判断对应id是否存在
+
+if(document.getElementById("id")){
+    alert('对象存在');
+    ... ...
+}
+else{
+    alert('对象不存在');
+    ... ...
+} 

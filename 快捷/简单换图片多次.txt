@@ -1,0 +1,10 @@
+    function c(){
+                 if(d.getAttribute("src",2) == "images/incc03_06.png"){
+                    d.src="images/money.png";
+                console.log("2111")
+             }else{
+                 d.src="images/incc03_06.png";
+                console.log("21222")
+             }
+
+         }

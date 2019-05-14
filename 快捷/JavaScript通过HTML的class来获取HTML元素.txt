@@ -1,0 +1,33 @@
+function getByClass3(parent, cls){
+  var res = [];
+  var reg = new RegExp('(^|\\s)' + cls + '($|\\s)', 'i');
+  var ele = parent.getElementsByTagName('*');
+  for(var i = 0; i < ele.length; i++){
+    if(reg.test(ele[i].className)){
+      res.push(ele[i]);
+    }
+  }
+  return res;
+}
+针对低版本不支持浏览器
+----------------------------------------------------------------
+方法五（完美版）
+
+function getByClass(parent, cls){
+  if(parent.getElementsByClassName){
+    return parent.getElementsByClassName(cls);
+  }else{
+    var res = [];
+    var reg = new RegExp(' ' + cls + ' ', 'i')
+    var ele = parent.getElementsByTagName('*');
+    for(var i = 0; i < ele.length; i++){
+      if(reg.test(' ' + ele[i].className + ' ')){
+        res.push(ele[i]);
+      }
+    }
+    return res;
+  }
+}
+
+
+使用方法： getByClass(document,"eRecently")

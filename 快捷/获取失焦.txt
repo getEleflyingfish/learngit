@@ -1,0 +1,13 @@
+onfocus="txtfocus()" onblur="txtblur()" 
+
+	                                                              function txtfocus(event){ //当前元素获得焦点
+					var e=window.event;
+					var obj=e.srcElement; //用于获取当前对象的名称
+					obj.parentNode.classList.add("st-vcin");
+					}
+
+					function txtblur(event){ //当前元素失去焦点
+					var e=window.event;
+					var obj=e.srcElement;
+					obj.parentNode.classList.remove("st-vcin");
+	                                                               }

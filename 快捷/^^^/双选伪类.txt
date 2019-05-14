@@ -1,0 +1,28 @@
+input[type="checkbox"]{
+    display:none;
+}
+input[type="checkbox"]+label{
+    position: relative;
+} 
+input[type="checkbox"]+label:before{
+    content: "";
+    width:25px;
+    height:25px;
+    background: #ffffff;
+    border:2px solid gray;
+    position: absolute;
+    bottom:3px;
+    left: -35px;
+    border-radius: 50%;
+}       
+input[type="checkbox"]:checked+label:before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    background: #cccc;
+    position: absolute;
+    bottom:3px;
+    left: -35px;
+    z-index: 99;
+    border-radius: 50%;
+}  

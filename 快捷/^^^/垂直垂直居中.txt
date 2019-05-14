@@ -1,0 +1,59 @@
+方法1：table-cell 
+/////////////////////////
+display: table-cell;
+    vertical-align: middle;
+    text-align: center;     
+///////////////////////////////// 
+方法3：绝对定位和负边距 
+       position: absolute;
+            width:100px;
+            height: 50px;
+            top:50%;
+            left:50%;
+            margin-left:-50px;
+            margin-top:-25px;
+            text-align: center;
+
+///////////////////
+方法4：绝对定位和0 
+  width: 50%; 
+  height: 50%; 
+  background: #000;
+  overflow: auto; 
+  margin: auto; 
+  position: absolute; 
+  top: 0; left: 0; bottom: 0; right: 0; 
+
+这种方法跟上面的有些类似，但是这里是通过margin:auto和top,left,right,bottom都设置为0实现居中，很神奇吧。
+不过这里得确定内部元素的高度，可以用百分比，比较适合移动端。 
+/////////////////////////////////////
+方法6：display:inline-block
+
+  text-align:center;
+  font-size:0;
+}
+.box7 span{
+  vertical-align:middle;
+  display:inline-block;
+  font-size:16px;
+}
+.box7:after{
+  content:'';
+  width:0;
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+这种方法确实巧妙...通过:after来占位。
+
+
+
+
+
+
+
+
+
+
+
+

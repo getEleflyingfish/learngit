@@ -1,0 +1,20 @@
+     eInputs["checked"]=false;
+                                    
+                                        for(var i = 0;i<eInputs.length;i++){
+                                            eInputs[i].index=i;   //获得下标
+                                            eInputs[i].checked=false;
+                                            eInputs[0].checked=true;
+                                            eInputs[i].onclick = function (){
+                                                // alert("不让关啊！");
+                                              this.checked=true;
+                                                // console.log(eInputs[i]["checked"]);
+                                                sbuying.style.display="block";
+                                                var lastinput=eInputs[2];
+                                          
+                                           if(this==lastinput){
+                                                    sbuying.style.display="none";
+                                                    // return;
+                                                } 
+              
+                                            }
+                                        }

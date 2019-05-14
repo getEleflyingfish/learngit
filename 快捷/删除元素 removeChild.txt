@@ -1,0 +1,4 @@
+   function removeEle(removeObj) { 
+                removeObj.parentNode.removeChild(removeObj); 
+                // É¾³ýÔªËØ 
+                }

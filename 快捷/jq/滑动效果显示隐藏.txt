@@ -1,0 +1,9 @@
+   $('.rongyu_box ').click(function(){
+                  $('.shade').fadeIn(100); 
+                  $('.shade').slideDown(200);  
+               }) 
+
+                $('.occlude').click(function(){  
+                  $('.shade').fadeOut(100);
+                  $('.shade').slideUp(200);
+               }) 

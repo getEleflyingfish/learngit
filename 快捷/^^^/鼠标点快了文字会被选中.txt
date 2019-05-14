@@ -1,0 +1,18 @@
+---------------------------------------------
+现象：html中可能有些地方不想让用户复制文字，或是用a标签做了个点击按钮，点快的时候文字会被选中，很丑，这个时候可以使用下面的方案禁止文字选中。
+ -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+   user-select: none; 
+
+
+
+
+-------------------------------
+举个栗子：在做APP时经常用到下面的~~
+html,body{
+      -webkit-touch-callout:none ;
+      -webkit-text-size-adjust:none ;
+      -webkit-tap-highlight-color:transparent ;
+      -webkit-user-select:none ;
+}

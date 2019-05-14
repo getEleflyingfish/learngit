@@ -1,0 +1,5 @@
+-webkit-box的属性：
+-webkit-box-orient(父):horizontal在水平行中从左向右排列子元素；vertical从上向下垂直排列子元素。
+-webkit-box-pack(父):start水平居左对齐；end水平居右对齐；center水平居中；justify两端对齐。
+-webkit-box-align(父):start居顶对齐；end居底对齐；center垂直居中；stretch拉伸到与父容器等高。
+-webkit-box-flex(子):用来让子容器针对父容器的宽度按一定规则进行划分。

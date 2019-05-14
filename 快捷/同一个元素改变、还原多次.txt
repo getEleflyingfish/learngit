@@ -1,0 +1,19 @@
+       <script>
+                var wzktibtn = document.getElementById("wzktiction");
+                var wzltp = document.getElementById("wzltp");
+                var flgd = 0;
+                wzktibtn.addEventListener('click', function () {
+
+                    if (flgd++ % 2 == 0) {
+
+                        wzltp.innerHTML = "“— ’≤ÿ";
+                        wzktibtn.style.color = "#FEAC2D";
+
+                    } else {
+                        alert('heiheihei')
+                        wzltp.innerHTML = " ’≤ÿ";
+                        wzktibtn.style.color = "";
+                    }
+                })
+
+            </script>

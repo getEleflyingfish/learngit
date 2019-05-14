@@ -1,0 +1,25 @@
+在移动端的页面中，个人倾向于设置font-size:0这种方法来清除掉。
+对于PC端上，可以参考doyoe的全浏览器兼容方案。
+/////////////////////////////////
+ 对于Chrome, 其默认有最小字体大小限制，考虑到兼容性，需要取消字体大小限制，这样写：
+<div class="demo">
+        <span>我是一个span
+        <span>我是一个span
+        <span>我是一个span
+        <span>我是一个span</span>
+    </div>
+    .demo {font-size: 0;-webkit-text-size-adjust:none;}
+    .demo span{
+         background:#ddd;
+         display: inline-block;
+         font-size: 14px; /*要设置相应的字号*/
+    }
+
+//////////////////////////////////////////////////////////
+利用HTML注释标签
+<div class="demo">
+        <span>我是一个span</span><!-- 
+        --><span>我是一个span</span><!-- 
+        --><span>我是一个span</span><!-- 
+        --><span>我是一个span</span>
+    </div>

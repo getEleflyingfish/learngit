@@ -1,0 +1,11 @@
+<script>
+function change_pic(){
+var imgObj = document.getElementById("caocao_pic");
+if(imgObj.getAttribute("src",2)=="images/caocao.png"){
+imgObj.src="images/diaochan.png";
+}else{
+imgObj.src="images/caocao.png";
+}
+}
+</script>
+<img src="images/caocao.png" class="wujiang_pic_size" id="caocao_pic" onClick="change_pic()">

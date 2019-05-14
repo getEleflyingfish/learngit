@@ -1,0 +1,10 @@
+//»»·ô
+$(function (){
+
+	$('.change_skin a').click(function () {
+		var na=$(this).attr("class");
+ 
+    $('#skincss').attr('href',"css/"+na+".css");
+
+})
+})

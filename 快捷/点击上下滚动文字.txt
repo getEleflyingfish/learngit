@@ -1,0 +1,106 @@
+<div class="scrollbox">
+ 
+         <div id="scrollDiv" class="scrolldiv"> 
+             <ul>
+                    <li><a href=""> 数据一</a></li>
+                    <li><a href=""> 数据一2</a></li>
+                    <li><a href=""> 数据一3</a></li>
+                    <li><a href=""> 数据一4</a></li>
+                    <li><a href=""> 数据一5</a></li>
+                    <li><a href=""> 数据一6</a></li>
+            </ul>
+         </div>
+         <div class="scroltit"> 
+               <div id="but_down">向下</div>
+               <div id="but_up">向上</div>
+         </div>
+</div>
+
+<style>
+
+
+body{
+          background: initial;
+      }
+      body{ color:#333; font-size:13px;}
+h3,ul,li{margin:0;padding:0; list-style:none;}
+.scrollbox{ width: 340px; margin: 0 auto; overflow: hidden; border: 1px solid #CFCFCF; padding: 10px; }
+#scrollDiv{width:340px;height:359px; overflow:hidden;}/*这里的高度和超出隐藏是必须的*/
+#scrollDiv li{height:90px; width:300px; padding:0 20px;background:url(ico-4.gif) no-repeat 10px 23px; overflow:hidden; vertical-align:bottom; zoom:1; border-bottom:#B7B7B7 dashed 1px;}
+#scrollDiv li h3{ height:24px; padding-top:13px; font-size:14px; color:#353535; line-height:24px; width:300px;}
+#scrollDiv li h3 a{color:#353535; text-decoration:none}#scrollDiv li h3 a:hover{ color:#F00}
+#scrollDiv li div{ height:36px; width:300px; color:#416A7F; line-height:18px; overflow:hidden}
+#scrollDiv li div a{ color:#416A7F; text-decoration:none}
+
+.scroltit{ height:26px; line-height:26px; padding-bottom:4px; margin-bottom:4px;}
+.scroltit h3{ width:100px; float:left;}
+.scroltit .updown{float:right; width:32px; height:22px; margin-left:4px}
+#but_up{ background:url(images/inclir_09.jpg) no-repeat 0 0; text-indent:-9999px;width: 50%;float: left;}
+#but_down{ background:url(images/inclir_09.jpg) no-repeat 0 0; text-indent:-9999px; width: 50%; float: left;}
+
+
+#n{margin:10px auto; width:920px; border:1px solid #CCC;font-size:12px; line-height:30px;}
+#n a{ padding:0 4px; color:#333}
+</style>
+
+$(document).ready(function(){
+        $("#scrollDiv").Scroll({line:1,speed:500,timer:3000,up:"but_up",down:"but_down"});
+});   
+
+
+(function($){
+$.fn.extend({
+        Scroll:function(opt,callback){
+                if(!opt) var opt={};
+                var _btnUp = $("#"+ opt.up);
+                var _btnDown = $("#"+ opt.down);
+                var timerID;
+                var _this=this.eq(0).find("ul:first");
+                var     lineH=_this.find("li:first").height(), 
+                        line=opt.line?parseInt(opt.line,10):parseInt(this.height()/lineH,10), 
+                        speed=opt.speed?parseInt(opt.speed,10):500; 
+                        timer=opt.timer 
+                if(line==0) line=1;
+                var upHeight=0-line*lineH;
+
+                var scrollUp=function(){
+                        _btnUp.unbind("click",scrollUp); 
+                        _this.animate({
+                                marginTop:upHeight
+                        },speed,function(){
+                                for(i=1;i<=line;i++){
+                                        _this.find("li:first").appendTo(_this);
+                                }
+                                _this.css({marginTop:0});
+                                _btnUp.bind("click",scrollUp); 
+                        });
+
+                }
+               
+                var scrollDown=function(){
+                        _btnDown.unbind("click",scrollDown);
+                        for(i=1;i<=line;i++){
+                                _this.find("li:last").show().prependTo(_this);
+                        }
+                        _this.css({marginTop:upHeight});
+                        _this.animate({
+                                marginTop:0
+                        },speed,function(){
+                                _btnDown.bind("click",scrollDown);
+                        });
+                }
+            
+                var autoPlay = function(){
+                        if(timer)timerID = window.setInterval(scrollUp,timer);
+                };
+                var autoStop = function(){
+                        if(timer)window.clearInterval(timerID);
+                };
+               
+                _this.hover(autoStop,autoPlay).mouseout();
+                _btnUp.css("cursor","pointer").click( scrollUp ).hover(autoStop,autoPlay);
+                _btnDown.css("cursor","pointer").click( scrollDown ).hover(autoStop,autoPlay);
+
+        }       
+})
+})(jQuery);

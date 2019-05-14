@@ -1,0 +1,21 @@
+  <div class="ewaio"> ss 
+      <div class="ewai">0.0.0 </div>
+      <div class="ball">
+             1
+        </div>      
+  </div>
+
+
+
+    <script>
+  
+  $(function() {
+        $(".ball").click(function() {
+         $(this).text($(".ewaio").is(":hidden") ? "收起" : "展开");
+             $(".ewai").slideToggle();
+         });
+     });
+     
+   
+ 
+    </script>

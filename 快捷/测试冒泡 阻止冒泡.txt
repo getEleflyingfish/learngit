@@ -1,0 +1,15 @@
+https://www.cnblogs.com/qianmojing/p/6257537.html        
+
+
+
+
+-----------------------------------------------
+//除当前元素外
+var myDiv = document.getElementById("myDiv");
+    document.addEventListener("click",function(){
+        myDiv.style.display="none";
+    });
+    myDiv.addEventListener("click",function(event){
+        event=event||window.event;
+        event.stopPropagation();
+    });

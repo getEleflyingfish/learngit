@@ -1,0 +1,22 @@
+.epinln_xlp_text em{
+    position: relative;
+    height: 0px;
+    width: 0px;
+    border-top: 9px solid transparent;
+    border-right: 10px solid #d0e4c2;
+    border-bottom: 10px solid transparent;
+    top: -67px;
+    left: -26px;
+    display: inherit;
+
+}
+.epinln_xlp_text em::after{
+    content: '';
+  position: absolute;
+  top: -8px;
+  left: 2px;
+  border-top: 8px solid transparent;
+  border-right: 9px solid #FFFFFF;
+  border-bottom: 9px solid transparent;
+
+}

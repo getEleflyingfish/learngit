@@ -1,0 +1,20 @@
+   // 倒计时
+       
+         let timerOnOff=true;
+            let timer=null;
+            let time=60;
+            bindEvent(query('.a-hqyzm'),'click',()=>{
+               if(timerOnOff){
+                  timerOnOff=false;
+                  query('.a-hqyzm').innerHTML=`${time--}S`
+                  timer=setInterval(()=>{
+                     query('.a-hqyzm').innerHTML=`${time--}S`
+                     if(time<=-1){
+                        clearInterval(timer);
+                        query('.a-hqyzm').innerHTML=`重新发送`;
+                        time=60;
+                        timerOnOff=true;
+                     }
+                  },1000)
+               }
+            })

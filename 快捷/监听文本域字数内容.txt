@@ -1,0 +1,20 @@
+function kenscroe() {
+    //获取文本内容和长度函数
+    function txtCount(el) {
+        var val = el.value;
+        var eLen = val.length;
+        return eLen;
+    }
+
+    var el = document.getElementById('ctp-textarea');
+    console.log(el);
+    el.addEventListener('input', function () {
+        var len = txtCount(this); //   调用函数 
+        document.getElementById('cnmuthis').innerHTML = len;
+    });
+
+    el.addEventListener('ctp-textarea', function () { //兼容IE
+        var len = txtCount(this); //   调用函数 
+        document.getElementById('cnmuthis').innerHTML = len;
+    });
+

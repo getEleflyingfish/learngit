@@ -1,0 +1,31 @@
+/* 判断浏览器是不是IE */
+
+
+function  oFunce() {};
+oFunce.prototype.afenisie = function (ins) {
+    var etire=document.getElementById(ins);
+
+    etire.onclick = function (ev) {
+        var oEvent = ev ||window.event;
+
+        if(isIE()==true){
+              alert("ie")
+            }else{
+                alert("Noie")
+            }
+        // 阻止默认事件
+        oEvent.cancelBubble = true;
+    };
+}
+
+var ouisie = new oFunce();
+ouisie.afenisie('etire');
+
+
+ function isIE() {
+         if (!!window.ActiveXObject || "ActiveXObject" in window){
+             return true;
+         }else{
+             return false;
+         }
+      }  

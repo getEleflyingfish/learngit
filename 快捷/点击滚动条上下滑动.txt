@@ -1,0 +1,10 @@
+$(function(){
+    $(".btnst-up").click(function(){
+     $("html,body").animate({scrollTop: $("#"+"btb").offset().bottom}, 1000);
+      })
+      
+      $(".btnst-dow").click(function(){
+
+      $("html,body").animate({scrollTop: $("#"+"bta").offset().top}, 1000);
+      })
+})

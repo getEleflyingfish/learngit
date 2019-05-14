@@ -1,0 +1,11 @@
+          var small = document.getElementById("adapt-small"); //tan
+            var btnSti = document.querySelector(".inpoe-drop");
+             small.style.display = "none";
+             document.body.onclick = function () {
+                small.style.display = "none";
+             }
+             btnSti.addEventListener("click",function(event){ 
+                event.stopPropagation();
+                event.cancelBubble = true;
+                small.style.display = "block";  ºÊ»›IE
+             },false)

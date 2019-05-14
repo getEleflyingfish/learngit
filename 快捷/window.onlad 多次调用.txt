@@ -1,0 +1,16 @@
+$(window).ready(function(){
+ tt2();
+});
+
+
+$(window).ready(function(){
+    yy2();
+   });
+
+function tt2(){
+ alert( t1+t2);
+}
+
+function yy2(){
+    alert( t1+t3);
+   }
